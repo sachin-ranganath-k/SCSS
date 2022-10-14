@@ -17,23 +17,37 @@ $font-sm: 20px;
       font-size: $font-sm;
       color: $color-secondary;
 
-      &:hover{   // & indicates parent element i.e., a:hover (without space)
+      &:hover {
+        // & indicates parent element i.e., a:hover (without space)
         color: $color-tertiary;
       }
     }
   }
 }
 
-.banner h1 {
-  // $color-secondary: red !global; //Local variable. Overrides global variable, if any
-  //                                 // Using " !global " local variables can be applied to global scope
-  font-size: $font-lg;
-  color: $color-secondary;
+@mixin headingStyles($fontSize: 50px) {
+  font-size: $fontSize;
+  color: $color-secondary; //Reusable variables (mixin)
   text-align: center;
 }
 
+@mixin transition($param...) {
+  // ... indicates taking multiple parameters
+  // in this case, color and background-color
+  transition: $param;
+}
+
+.banner h1 {
+  // $color-secondary: red !global; //Local variable. Overrides global variable, if any
+  //                                 // Using " !global " local variables can be applied to global scope
+  @include headingStyles($font-lg); //Paramenter passing in mixins
+}
+
 .footer h3 {
-  font-size: $font-md;
-  color: $color-secondary;
-  text-align: center;
+  @include headingStyles;
+  @include transition(color 0.5s, background-color 1s);
+  &:hover {
+    color: $color-tertiary;
+    background-color: $color-primary;
+  }
 }
