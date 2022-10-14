@@ -4,3 +4,7 @@ Initial setup
 -- Transpile scss to css : node-scss -o css scss/main.scss
 -- Live output (watch mode) : node-sass -o css scss/main.scss -w
    (Command included in package.json. Just run "npm run watch")
+
+
+-- Nothing to do with .css file. Will write code in .scss file and it will transpile to css
+

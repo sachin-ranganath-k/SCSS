@@ -1,3 +1,25 @@
-body{
-    background-color: black;
+$color-primary: orange;
+$color-secondary: gray;
+$color-tertiary: royalblue;
+
+$font-lg:40px;
+$font-md:30px;
+$font-sm:20px;
+
+.nav{
+    background-color: $color-primary;
+}
+
+.banner h1{
+    $color-secondary: red !global; //Local variable. Overrides global variable, if any
+                                    // Using " !global " local variables can be applied to global scope
+    font-size: $font-lg;
+    color: $color-secondary;
+    text-align: center;
+}
+
+.footer h3{
+    font-size: $font-md;
+    color: $color-secondary;
+    text-align: center;
 }
