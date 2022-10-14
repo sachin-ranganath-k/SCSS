@@ -25,29 +25,21 @@ $font-sm: 20px;
   }
 }
 
-@mixin headingStyles($fontSize: 50px) {
-  font-size: $fontSize;
-  color: $color-secondary; //Reusable variables (mixin)
+.heading {
+  color: $color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
   text-align: center;
 }
 
-@mixin transition($param...) {
-  // ... indicates taking multiple parameters
-  // in this case, color and background-color
-  transition: $param;
-}
+ h1 {
+  @extend .heading;  //@ extend inherit properties
 
-.banner h1 {
-  // $color-secondary: red !global; //Local variable. Overrides global variable, if any
-  //                                 // Using " !global " local variables can be applied to global scope
-  @include headingStyles($font-lg); //Paramenter passing in mixins
+  &:hover{
+    background-color: green;
+  }
 }
 
 .footer h3 {
-  @include headingStyles;
-  @include transition(color 0.5s, background-color 1s);
-  &:hover {
-    color: $color-tertiary;
-    background-color: $color-primary;
-  }
+  @extend h1;
 }
