@@ -1,0 +1,6 @@
+Initial setup
+-- package.json initialisation : npm init --yes
+-- Install SCSS globally : npm i -g node-scss
+-- Transpile scss to css : node-scss -o css scss/main.scss
+-- Live output (watch mode) : node-sass -o css scss/main.scss -w
+   (Command included in package.json. Just run "npm run watch")
