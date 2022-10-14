@@ -1,5 +1,6 @@
 .nav {
-  background-color: orange; }
+  background-color: rgba(255, 165, 0, 0.4);
+  background-color: #00731a; }
   .nav ul li {
     list-style: none; }
     .nav ul li a {
@@ -17,3 +18,9 @@
 
 h1:hover, .footer h3:hover {
   background-color: green; }
+
+.banner p {
+  font-size: 40px; }
+
+.footer p {
+  font-size: 60px; }

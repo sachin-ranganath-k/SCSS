@@ -7,7 +7,10 @@ $font-md: 30px;
 $font-sm: 20px;
 
 .nav {
-  background-color: $color-primary;
+  //   background-color: lighten($color-primary, 20%);  //All are inbuilt functions
+  //   background-color: darken($color-primary, 30%);
+  background-color: transparentize($color-primary, 0.6);
+  background-color: mix(blue, green, 10%); // 10% BLUE, 90% GREEN
 
   ul li {
     //Nesting
@@ -32,14 +35,27 @@ $font-sm: 20px;
   text-align: center;
 }
 
- h1 {
-  @extend .heading;  //@ extend inherit properties
+@function fontSize($size: 30px) {
+  //Functions
+  @return $size * 2; //30*2 = 60px
+}
 
-  &:hover{
+h1 {
+  @extend .heading; //@ extend inherit properties
+
+  &:hover {
     background-color: green;
   }
 }
 
 .footer h3 {
   @extend h1;
+}
+
+.banner p {
+  font-size: fontSize($font-sm);
+}
+
+.footer p {
+  font-size: fontSize(); //50px. Takes default parameter assigned value
 }
