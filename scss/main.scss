@@ -2,24 +2,38 @@ $color-primary: orange;
 $color-secondary: gray;
 $color-tertiary: royalblue;
 
-$font-lg:40px;
-$font-md:30px;
-$font-sm:20px;
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
 
-.nav{
-    background-color: $color-primary;
+.nav {
+  background-color: $color-primary;
+
+  ul li {
+    //Nesting
+    list-style: none;
+    a {
+      text-decoration: none;
+      font-size: $font-sm;
+      color: $color-secondary;
+
+      &:hover{   // & indicates parent element i.e., a:hover (without space)
+        color: $color-tertiary;
+      }
+    }
+  }
 }
 
-.banner h1{
-    $color-secondary: red !global; //Local variable. Overrides global variable, if any
-                                    // Using " !global " local variables can be applied to global scope
-    font-size: $font-lg;
-    color: $color-secondary;
-    text-align: center;
+.banner h1 {
+  // $color-secondary: red !global; //Local variable. Overrides global variable, if any
+  //                                 // Using " !global " local variables can be applied to global scope
+  font-size: $font-lg;
+  color: $color-secondary;
+  text-align: center;
 }
 
-.footer h3{
-    font-size: $font-md;
-    color: $color-secondary;
-    text-align: center;
+.footer h3 {
+  font-size: $font-md;
+  color: $color-secondary;
+  text-align: center;
 }
